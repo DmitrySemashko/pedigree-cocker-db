@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet" />
+    <style>
+        .navbar .nav-link {
+            color: #fff !important;
+        }
+    </style>
+</head>
+<body>
+<header>
+<form th:action = "@{/dogs/new}" th:object="${dog}" th:method="post" enctype="multipart/form-data">
+    <label>Name:<br>
+        <input type="text" th:field="*{name}"><br>
+    </label>
+    <label>Номер родословной:<br>
+        <input type="text" th:field="*{number}"><br>
+    </label>
+    <label>Мать:<br>
+        <input type="text" th:field="*{mother.name}"><br>
+    </label>
+    <label>Отец:<br>
+        <input type="text" th:field="*{father.name}"><br>
+    </label>
+    <label>Gender:</label>
+    <input type="radio" th:field="*{gender}" value="MALE" />Male
+    <input type="radio" th:field="*{gender}" value="FEMALE" />Female<br/>
+    <label>:<br>
+        <input type="date" th:field="*{dateBirth}"><br>
+    </label>
+    <label>Место рождения:<br>
+        <input type="text" th:field="*{landBirth}"><br>
+    </label>
+    <label>Находиться:<br>
+        <input type="text" th:field="*{landStanding}"><br>
+    </label>
+    <label>Окрас:</label>
+    <label>
+        <select th:field="*{colour}">
+            <option th:each="colours : ${colour}" th:value="${colours}" th:text="${colours}"></option>
+        </select>
+    </label>
+    <br/>
+    <label>Photos: </label>
+    <input type="file" name="image" accept="image/png, image/jpeg" />
+    <label><br>
+        <input type="submit" value="new"><br>
+    </label>
+
+</form>
+</header>
+</body>
+</html>

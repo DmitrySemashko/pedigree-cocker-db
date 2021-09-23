@@ -1,0 +1,23 @@
+{
+  "properties": [
+    {
+      "name": "hostname",
+      "type": "java.lang.String",
+      "description": "Description for hostname."
+    },
+    {
+      "name": "mail.debug",
+      "type": "java.lang.String",
+      "description": "Description for mail.debug."
+    },
+    {
+      "name": "hostname",
+      "type": "java.lang.String",
+      "description": "Description for hostname."
+    },
+    {
+      "name": "hostname",
+      "type": "java.lang.String",
+      "description": "Description for hostname."
+    }
+  ] }
